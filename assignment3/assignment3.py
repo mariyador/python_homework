@@ -87,7 +87,7 @@ print(clean_data)
 
 
 # 6: Convert Hire Date to datetime
-clean_data["Hire Date"] = pd.to_datetime(clean_data['Hire Date'], errors="coerce")
+clean_data ['Hire Date'] = pd.to_datetime(clean_data['Hire Date'], format='mixed')
 print(clean_data)
 
 
