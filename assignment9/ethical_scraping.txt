@@ -1,0 +1,23 @@
+1. Which sections of the website are restricted for crawling?
+
+Wikipedia restricts access to a wide range of pages, including administrative and user-related areas such as:
+- /w/
+- /api/
+- /wiki/Special:
+- /wiki/Wikipedia:Articles_for_deletion/
+- /wiki/Wikipedia:Requests_for_arbitration/
+- /wiki/Wikipedia:Checkuser/
+- /wiki/Category:Noindexed_pages
+and many more related to discussions, deletions, and backend operations.
+
+2. Are there specific rules for certain user agents?
+
+Yes, the site disallows crawling entirely for certain bots, like:
+User-agent: Download Ninja  
+Disallow: /
+
+3. Why websites use robots.txt and how it promotes ethical scraping:
+
+The robots.txt file provides instructions to web crawlers on which parts of a website they are allowed to access. 
+This helps prevent overload on servers, protects sensitive or administrative content, and ensures respectful, legal, and ethical interaction with the website. 
+Ethical scraping means obeying these rules to avoid causing harm or violating site policies.

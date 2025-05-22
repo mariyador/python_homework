@@ -1,0 +1,13 @@
+The main challenge was understanding the HTML structure of the OWASP Top 10 page and figuring out why my result list was coming back empty, 
+even though the page clearly showed the data.
+At first, I tried to use XPath to extract the list of vulnerabilities, 
+but my expressions were either too general or pointed to the wrong elements. 
+I assumed the first <ul> on the page would contain the list, but in reality, the page had multiple <ul> elements, 
+and the relevant data was inside the second one, nested within a div inside #sec-main.
+To resolve this, I opened Chrome DevTools, carefully inspected the DOM, 
+and noticed that the list of vulnerabilities was the second <ul> inside the section. 
+Instead of struggling with an overly complex XPath, I decided to use find_elements(By.TAG_NAME, 'ul') to get all <ul> elements, 
+and then selected the second one with ul_lists[1].
+This approach was simpler and more reliable because I could visually confirm in the DOM that the second list contained the correct <a> links,
+each with the vulnerability title and href. I then looped through these <a> tags, cleaned up the text using .strip(),
+and saved the data in dictionaries.
